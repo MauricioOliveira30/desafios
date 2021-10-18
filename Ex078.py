@@ -1,15 +1,20 @@
-listanum=[]
-maior=menor=0
+lista=[]
+mai=men=0
 for c in range(0,5):
-    listanum.append(int(input(f'Digite um valor na posição {c}:')))
+    lista.append(int(input(f'Digite a posição {c}:')))
     if c==0:
-            maior=menor=listanum[c]
+        mai=men=lista[c]
+    if mai<lista[c]:
+        mai=lista[c]
 else:
-    if listanum[c]>maior:
-        maior=listanum[c]
-        if listanum[c]<menor:
-            menor=listanum[c]
-print('-='*30)
-print(f'Os valores digitados foram {listanum}')
-print(f'O maior valor digitado foi {maior}')
-print(f'O menor valor digitado foi {menor}')
+    if men>lista[c]:
+        men=lista[c]
+print(f'O maior valor digitado foi {mai} na posição',end='')
+for i,v in enumerate(lista):
+    if v==mai:
+        print(f'...{i}')
+print('O menor valor foi encotrado na posição',end='')
+for i,v in enumerate(lista):
+    if v==men:
+        print(f'...{i}')
+print(lista)

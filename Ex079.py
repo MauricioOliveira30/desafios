@@ -1,14 +1,16 @@
-números=[]
+valores=list()
 while True:
-    n=int(input('Digite um valor:'))
-    if n not in  números:
-        números.append(n)
+    v=int(input('Digite um valor:'))
+    r=str(input('Quer continuar?[S/N]:'))
+    if v not in valores:
+        valores.append(v)
         print('Valor adicionado com sucesso...')
     else:
-        print('Valor duplicado não vou adicionar...')
-    r = str(input('Quer continuar?[S/N]:')).upper()
-    if r!='S':
-        break
-números.sort()
+        print('Valor duplicado!Não vou adicionar')
+        if r in'Nn':
+            break
 print('-='*30)
-print(f'Você digitou os valores {números}')
+print(valores.sort())
+print(valores)
+
+
